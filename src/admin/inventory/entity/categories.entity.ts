@@ -1,6 +1,6 @@
 // src/categories/entities/category.entity.ts
 import { Entity, PrimaryGeneratedColumn, Column, OneToMany, CreateDateColumn, UpdateDateColumn } from 'typeorm';
-import { Product } from './products.schema';
+import { Product } from './products.entity';
 
 @Entity('categories')
 export class Category {
@@ -14,7 +14,7 @@ export class Category {
   description: string;
 
   @Column({ nullable: true })
-  image: string; // URL to category image
+  imgUrl: string; // URL to category image
 
   @Column({ default: true })
   isActive: boolean;

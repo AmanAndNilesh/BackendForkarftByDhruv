@@ -1,11 +1,14 @@
 // src/products/entities/product.entity.ts
 import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, OneToMany, JoinColumn, CreateDateColumn, UpdateDateColumn } from 'typeorm';
-import { Category } from './categories.schema';
+import { Category } from './categories.entity';
 
 @Entity('products')
 export class Product {
   @PrimaryGeneratedColumn('uuid')
   id: string;
+
+  @Column({ nullable: true })
+  imgUrl : string;
 
   @Column()
   name: string;
